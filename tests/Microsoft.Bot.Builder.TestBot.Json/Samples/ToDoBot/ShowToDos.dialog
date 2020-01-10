@@ -19,7 +19,7 @@
                     "elseActions": [
                         {
                             "$kind": "Microsoft.SendActivity",
-                            "activity": "@{ShowTodo()}"
+                            "activity": "${ShowTodo()}"
                         }
                     ]
                 }

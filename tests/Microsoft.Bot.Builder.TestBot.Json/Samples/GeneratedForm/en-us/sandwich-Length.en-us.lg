@@ -1,11 +1,11 @@
 # AskLength
-- @{askNumber('Length')}
+- ${askNumber('Length')}
 
 # LengthName
 - length
 
 # Length(val)
-- @{LengthEntity(val)}
+- ${LengthEntity(val)}
 
 [sandwich-LengthEntity.lg](sandwich-LengthEntity.lg)
 

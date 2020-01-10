@@ -19,7 +19,7 @@ namespace Microsoft.Bot.Builder.LanguageGeneration
     public class Evaluator : LGFileParserBaseVisitor<object>
     {
         public const string LGType = "lgType";
-        public static readonly Regex ExpressionRecognizeRegex = new Regex(@"(?<!\\)@{(((\'([^'\r\n])*?\')|(\""([^""\r\n])*?\""))|[^\r\n{}'""])*?}", RegexOptions.Compiled);
+        public static readonly Regex ExpressionRecognizeRegex = new Regex(@"(?<!\\)\${(((\'([^'\r\n])*?\')|(\""([^""\r\n])*?\""))|[^\r\n{}'""])*?}", RegexOptions.Compiled);
         private readonly Stack<EvaluationTarget> evaluationTargetStack = new Stack<EvaluationTarget>();
 
         public Evaluator(List<LGTemplate> templates, ExpressionEngine expressionEngine)
@@ -305,7 +305,7 @@ namespace Microsoft.Bot.Builder.LanguageGeneration
         {
             try
             {
-                exp = exp.TrimStart('@').TrimStart('{').TrimEnd('}');
+                exp = exp.TrimStart('$').TrimStart('{').TrimEnd('}');
                 var (result, error) = EvalByExpressionEngine(exp, CurrentTarget().Scope);
 
                 if (error != null
@@ -328,7 +328,7 @@ namespace Microsoft.Bot.Builder.LanguageGeneration
 
         private object EvalExpression(string exp)
         {
-            exp = exp.TrimStart('@').TrimStart('{').TrimEnd('}');
+            exp = exp.TrimStart('$').TrimStart('{').TrimEnd('}');
             var (result, error) = EvalByExpressionEngine(exp, CurrentTarget().Scope);
             if (error != null)
             {

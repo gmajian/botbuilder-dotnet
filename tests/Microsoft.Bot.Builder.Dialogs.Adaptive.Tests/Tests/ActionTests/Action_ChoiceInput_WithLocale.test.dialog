@@ -30,7 +30,7 @@
                     },
                     {
                         "$kind": "Microsoft.SendActivity",
-                        "activity": "@{user.color}"
+                        "activity": "${user.color}"
                     },
                     {
                         "$kind": "Microsoft.ChoiceInput",
@@ -55,7 +55,7 @@
                     },
                     {
                         "$kind": "Microsoft.SendActivity",
-                        "activity": "@{user.color}"
+                        "activity": "${user.color}"
                     },
                     {
                         "$kind": "Microsoft.ChoiceInput",
@@ -80,7 +80,7 @@
                     },
                     {
                         "$kind": "Microsoft.SendActivity",
-                        "activity": "@{user.color}"
+                        "activity": "${user.color}"
                     }
                 ]
             }

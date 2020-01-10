@@ -1,11 +1,11 @@
 # AskOrdinal
-- @{askString('Ordinal')}
+- ${askString('Ordinal')}
 
 # OrdinalName
 - ordinal
 
 # Ordinal(val)
-- @{OrdinalEntity(val)}
+- ${OrdinalEntity(val)}
 
 [unittests-OrdinalEntity.lg](unittests-OrdinalEntity.lg)
 

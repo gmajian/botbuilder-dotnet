@@ -30,7 +30,7 @@
                 },
                 {
                     "$kind": "Microsoft.SendActivity",
-                    "activity": "Hello @{user.name}, nice to talk to you!"
+                    "activity": "Hello ${user.name}, nice to talk to you!"
                 },
                 {
                     "$kind": "Microsoft.IfCondition",
@@ -47,7 +47,7 @@
                 },
                 {
                     "$kind": "Microsoft.SendActivity",
-                    "activity": "Hello @{user.name2}, nice to talk to you!"
+                    "activity": "Hello ${user.name2}, nice to talk to you!"
                 }
             ]
         },

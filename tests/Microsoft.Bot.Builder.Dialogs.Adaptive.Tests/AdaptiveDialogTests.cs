@@ -253,7 +253,7 @@ namespace Microsoft.Bot.Builder.Dialogs.Adaptive.Tests
                                 new Foreach
                                 {
                                     ItemsProperty = "$items",
-                                    Actions = new List<Dialog> { new SendActivity { Activity = new ActivityTemplate("@{$foreach.value}") } }
+                                    Actions = new List<Dialog> { new SendActivity { Activity = new ActivityTemplate("${$foreach.value}") } }
                                 }
                             }
                         }
