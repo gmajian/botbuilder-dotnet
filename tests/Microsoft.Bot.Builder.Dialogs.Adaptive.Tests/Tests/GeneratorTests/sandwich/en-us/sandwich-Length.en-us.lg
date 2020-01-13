@@ -1,12 +1,19 @@
 # AskLength
+<<<<<<< HEAD
 - ${askNumber('Length')}
+=======
+- @{askString('Length')}
+>>>>>>> master
 
 # LengthName
 - length
 
+<<<<<<< HEAD
 # Length(val)
 - ${LengthEntity(val)}
 
 [sandwich-LengthEntity.lg](sandwich-LengthEntity.lg)
 
+=======
+>>>>>>> master
 [sandwich-common.lg](sandwich-common.lg)

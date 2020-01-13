@@ -7,8 +7,15 @@
     "actions": [       
         {
             "$kind": "Microsoft.Ask",
+<<<<<<< HEAD
             "activity": "${AskBread()}",
             "expectedProperties": "createArray('Bread')"
+=======
+            "activity": "@{AskBread()}",
+            "expectedProperties": [
+                "Bread"
+            ]
+>>>>>>> master
         }
     ]
 }
