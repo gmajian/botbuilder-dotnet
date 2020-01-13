@@ -77,7 +77,7 @@ namespace Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions
                             return factory.Parse($"exists({entity})");
                         }
 
-                        return factory.Parse($"exists(${entity})");
+                        return factory.Parse($"exists(@{entity})");
                     }).ToArray()));
             }
 
