@@ -4,18 +4,13 @@
     "$kind": "Microsoft.OnEndOfActions",
     "condition":"!$Bread",
     "priority": "indexOf(dialog.requiredProperties, 'Bread')",
-    "actions": [       
-        {
-            "$kind": "Microsoft.Ask",
-<<<<<<< HEAD
-            "activity": "${AskBread()}",
-            "expectedProperties": "createArray('Bread')"
-=======
-            "activity": "@{AskBread()}",
-            "expectedProperties": [
-                "Bread"
-            ]
->>>>>>> master
-        }
+    "actions": [
+      {
+          "$kind": "Microsoft.Ask",
+          "activity": "${AskBread()}",
+          "expectedProperties": [
+            "Bread"
+          ]
+      }
     ]
 }

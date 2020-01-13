@@ -58,13 +58,8 @@ Enter a value for ${name(property)}
 - No help available.
 
 # requiredProperties
-<<<<<<< HEAD
 - IF: ${count(dialogClass.schema.required) > 0}
-- Required properties include: ${join(foreach(where(dialogClass.schema.required, property, !contains(dialogClass.schema.$expectedOnly, property)), property, name(property)), ',')}\n
-=======
-- IF: @{count(dialogClass.schema.required) > 0}
-- Required properties include: @{join(foreach(dialogClass.schema.required, property, name(property)), ',')}\n
->>>>>>> master
+- Required properties include: ${join(foreach(dialogClass.schema.required, property, name(property)), ',')}\n
 - ELSE:
 - 
 
@@ -89,12 +84,12 @@ Please choose a value for ${name(property)} from \[${join(foreach(turn.dialogEve
 - Do you want to end the conversation? (yes/no)
 
 # setObjectPropertyMessage(property, val)
-- IF: @{contains($expectedProperties, property)}
+- IF: ${contains($expectedProperties, property)}
 - 
-- ELSEIF: @{dialog[property]} 
-- @{name(property)} is changed from @{join(foreach(dialogClass.schema.properties[property].required, subproperty, subFact(property, subproperty)), ' ')} to @{val}.
+- ELSEIF: ${dialog[property]} 
+- ${name(property)} is changed from ${join(foreach(dialogClass.schema.properties[property].required, subproperty, subFact(property, subproperty)), ' ')} to ${val}.
 - ELSE: 
-- @{name(property)} is set as @{val}.
+- ${name(property)} is set as ${val}.
 
 # setPropertyMessage(property, val)
 - IF: ${contains($expectedProperties, property)}
@@ -130,22 +125,18 @@ Please choose a value for ${name(property)} from \[${join(foreach(turn.dialogEve
 - ${join(foreach(dialog.requiredProperties, property, textProperty(property)), ', ')}
 
 # textProperty(property)
-<<<<<<< HEAD
-- ${toLower(property)}=${value(property, dialog[property])}
-=======
-- IF: @{dialog[property] == null}
-- The value of @{toLower(property)} is empty.
-- ELSEIF: @{dialogClass.schema.properties[property].required}
-- The value of @{toLower(property)} is @{join(foreach(dialogClass.schema.properties[property].required, subproperty, subFact(property, subproperty)), ' ')}.
+- IF: ${dialog[property] == null}
+- The value of ${toLower(property)} is empty.
+- ELSEIF: ${dialogClass.schema.properties[property].required}
+- The value of ${toLower(property)} is ${join(foreach(dialogClass.schema.properties[property].required, subproperty, subFact(property, subproperty)), ' ')}.
 - ELSE:
-- The value of @{toLower(property)} is @{dialog[property]}.
+- The value of ${toLower(property)} is ${dialog[property]}.
 
 # confirmChangeProperty(property)
-- IF: @{dialog[property]}
-- Do you want to change the value of @{toLower(property)}? (yes or no)
+- IF: ${dialog[property]}
+- Do you want to change the value of ${toLower(property)}? (yes or no)
 - ELSE: 
-- Do you want to add a value for @{toLower(property)}? (yes or no)
->>>>>>> master
+- Do you want to add a value for ${toLower(property)}? (yes or no)
 
 # formCard
 -```
