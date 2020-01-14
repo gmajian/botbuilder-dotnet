@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions;
 using Microsoft.Bot.Builder.Dialogs.Adaptive.Selectors;
 using Microsoft.Bot.Builder.Dialogs.Debugging;
-using Microsoft.Bot.Expressions;
 using Microsoft.Bot.Schema;
+using Microsoft.Expressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

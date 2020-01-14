@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
-using Microsoft.Bot.Expressions;
+using Microsoft.Expressions;
 
 namespace Microsoft.Bot.Builder.LanguageGeneration
 {

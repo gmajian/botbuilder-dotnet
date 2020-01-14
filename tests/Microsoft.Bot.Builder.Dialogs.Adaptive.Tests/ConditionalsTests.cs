@@ -4,8 +4,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions;
-using Microsoft.Bot.Expressions;
 using Microsoft.Bot.Schema;
+using Microsoft.Expressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using dbg = System.Diagnostics;
 

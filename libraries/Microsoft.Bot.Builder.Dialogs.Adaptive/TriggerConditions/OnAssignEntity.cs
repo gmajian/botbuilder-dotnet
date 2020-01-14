@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Microsoft.Bot.Builder.Dialogs.Adaptive.Conditions;
-using Microsoft.Bot.Expressions;
+using Microsoft.Expressions;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 

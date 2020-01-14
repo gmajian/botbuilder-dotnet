@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
-using Microsoft.Bot.Expressions;
+using Microsoft.Expressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Microsoft.Bot.Expressions;
+using Microsoft.Expressions;
 using Microsoft.Recognizers.Text.Number;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
