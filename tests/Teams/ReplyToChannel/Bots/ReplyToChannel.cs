@@ -28,34 +28,8 @@ namespace Microsoft.BotBuilderSamples.Bots
         {
             var teamsChannelId = turnContext.Activity.TeamsGetChannelId();
             var message = MessageFactory.Text("good morning");
-
-            var serviceUrl = turnContext.Activity.ServiceUrl;
-            var credentials = new MicrosoftAppCredentials(_appId, _appPassword);
-
-            // there are two scenarios for create conversation
-
-            // (1) starting a thread within a channel
-
-            var conversationParameters = new ConversationParameters
-            {
-                IsGroup = true,
-                ChannelData = new { channel = new { id = teamsChannelId } },
-                Activity = (Activity)message,
-            };
-
-            ConversationReference conversationReference = null;
-
-            await ((BotFrameworkAdapter)turnContext.Adapter).CreateConversationAsync(
-                teamsChannelId,
-                serviceUrl,
-                credentials,
-                conversationParameters,
-                (t, ct) =>
-                {
-                    conversationReference = t.Activity.GetConversationReference();
-                    return Task.CompletedTask;
-                },
-                cancellationToken);
+            var creds = new MicrosoftAppCredentials(this._appId, this._appPassword);
+            var conversationReference = await TeamsInfo.SendMessageToTeamsChannelAsync(turnContext, message, teamsChannelId, creds);
 
             //// (2) starting a one on one chat
 
@@ -84,15 +58,14 @@ namespace Microsoft.BotBuilderSamples.Bots
             //    },
             //    cancellationToken);
 
-            //await ((BotFrameworkAdapter)turnContext.Adapter).ContinueConversationAsync(
-            //    _appId,
-            //    conversationReference,
-            //    async (t, ct) =>
-            //    {
-            //        await t.SendActivityAsync(MessageFactory.Text("good afternoon"), ct);
-            //        await t.SendActivityAsync(MessageFactory.Text("good night"), ct);
-            //    },
-            //    cancellationToken);
+            await ((BotFrameworkAdapter)turnContext.Adapter).ContinueConversationAsync(
+                this._appId,
+                conversationReference,
+                async (t, ct) =>
+                {
+                    await t.SendActivityAsync(MessageFactory.Text("this will be the first reply"), ct);
+                },
+                cancellationToken);
         }
     }
 }
